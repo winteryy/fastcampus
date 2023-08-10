@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.addTextChangedListener
 import winterry.part1.chapter3.databinding.ActivityMainBinding
+import java.math.BigDecimal
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,20 +23,20 @@ class MainActivity : AppCompatActivity() {
         val inputUnitTextView = binding.inputUnitTextView
         val swapImgBtn = binding.swapImgBtn
 
-        var inputNumber : Int = 0
+        var inputNumber : BigDecimal = BigDecimal("0")
 
 
         inputEditText.addTextChangedListener { text ->
             inputNumber = if(text.isNullOrEmpty()){
-                0
+                BigDecimal(0)
             } else {
-                text.toString().toInt()
+                text.toString().toBigDecimal()
             }
 
             if(cmToM) {
-                outputTextView.text = inputNumber.times(0.01).toString()
+                outputTextView.text = inputNumber.times(BigDecimal("0.01")).toString()
             } else {
-                outputTextView.text = inputNumber.times(100).toString()
+                outputTextView.text = inputNumber.times(BigDecimal("100")).toString()
             }
         }
 
@@ -44,11 +45,11 @@ class MainActivity : AppCompatActivity() {
             if(cmToM){
                 inputUnitTextView.text = "cm"
                 outputUnitTextView.text = "m"
-                outputTextView.text = inputNumber.times(0.01).toString()
+                outputTextView.text = inputNumber.times(BigDecimal("0.01")).toString()
             } else {
                 inputUnitTextView.text = "m"
                 outputUnitTextView.text = "cm"
-                outputTextView.text = inputNumber.times(100).toString()
+                outputTextView.text = inputNumber.times(BigDecimal("100")).toString()
             }
         }
     }
