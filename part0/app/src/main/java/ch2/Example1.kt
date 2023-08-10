@@ -1,6 +1,6 @@
 package ch2
 
-fun main(){
+fun main() {
 
     val a = fun(){ println("Hello") }
     val b: (Int) -> Int = {
