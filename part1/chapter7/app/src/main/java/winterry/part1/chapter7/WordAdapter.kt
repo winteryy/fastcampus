@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import winterry.part1.chapter7.databinding.ItemWordBinding
 
-class WordAdapter(private val list: MutableList<Word>,
+class WordAdapter(val list: MutableList<Word>,
                   private val itemClickListener: ItemClickListener? = null
                   ): RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
