@@ -34,6 +34,26 @@ class MainActivity : AppCompatActivity(), WordAdapter.ItemClickListener {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        initRecyclerView()
+        binding.addButton.setOnClickListener {
+            Intent(this, AddActivity::class.java).let {
+                updateAddWordResult.launch(it)
+            }
+        }
+
+        binding.deleteImageView.setOnClickListener {
+            delete()
+        }
+        binding.editImageView.setOnClickListener {
+            edit()
+        }
+    }
+
     private fun updateAddWord() {
         Thread {
             AppDatabase.getInstance(this)?.wordDao()?.getLatestWord()?.let { word ->
@@ -53,26 +73,6 @@ class MainActivity : AppCompatActivity(), WordAdapter.ItemClickListener {
             wordAdapter.notifyItemChanged(index)
             binding.textTextView.text = word.text
             binding.meanTextView.text = word.mean
-        }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        initRecyclerView()
-        binding.addButton.setOnClickListener {
-            Intent(this, AddActivity::class.java).let {
-                updateAddWordResult.launch(it)
-            }
-        }
-
-        binding.deleteImageView.setOnClickListener {
-            delete()
-        }
-        binding.editImageView.setOnClickListener {
-            edit()
         }
     }
 
