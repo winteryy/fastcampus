@@ -14,8 +14,13 @@ class WaveformView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    val rectF = RectF(20f, 30f, 20f+30f, 30f+60f)
-    val redPaint = Paint().apply {
+    private val ampList = mutableListOf<Float>()
+    private val rectList = mutableListOf<RectF>()
+
+    private val rectWidth = 12f
+    private var tick = 0
+
+    private val redPaint = Paint().apply {
         color = Color.RED
 
     }
@@ -23,15 +28,61 @@ class WaveformView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        canvas?.drawRect(rectF, redPaint)
+        for(rectF in rectList) {
+            canvas?.drawRect(rectF, redPaint)
+        }
     }
 
     fun addAmplitude(maxAmplitude: Float) {
-        rectF.top = 0f
-        rectF.bottom = maxAmplitude
-        rectF.left = 0f
-        rectF.right = rectF.left + 20f
+        val amplitude = (maxAmplitude / Short.MAX_VALUE) * this.height * 0.8f
 
+        ampList.add(amplitude)
+        rectList.clear()
+
+        val maxRect = (this.width / rectWidth).toInt()
+
+        val amps = ampList.takeLast(maxRect)
+
+        for((i, amp) in amps.withIndex()) {
+            val rectF = RectF()
+            rectF.top = (this.height / 2) - amp/2 - 2f
+            rectF.bottom = rectF.top + amp + 2f
+            rectF.left = rectWidth * i
+            rectF.right = rectF.left + rectWidth - 2f
+
+            rectList.add(rectF)
+        }
+
+        invalidate()
+    }
+
+    fun replayAmplitude() {
+        rectList.clear()
+
+        val maxRect = (this.width / rectWidth).toInt()
+        val amps = ampList.take(tick).takeLast(maxRect)
+
+        for((i, amp) in amps.withIndex()) {
+            val rectF = RectF()
+            rectF.top = (this.height / 2) - amp/2 - 2f
+            rectF.bottom = rectF.top + amp + 2f
+            rectF.left = rectWidth * i
+            rectF.right = rectF.left + rectWidth - 2f
+
+            rectList.add(rectF)
+        }
+
+        tick++
+        invalidate()
+    }
+
+    fun clearData() {
+        ampList.clear()
+    }
+
+    fun clearWave() {
+        rectList.clear()
+        tick=0
         invalidate()
     }
 }

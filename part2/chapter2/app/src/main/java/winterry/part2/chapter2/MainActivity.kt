@@ -70,6 +70,8 @@ class MainActivity : AppCompatActivity(), OnTimerTickListener {
                 }
             }
         }
+        binding.playButton.isEnabled = false
+        binding.playButton.alpha = 0.3f
 
         binding.stopButton.setOnClickListener {
             when(state) {
@@ -133,6 +135,7 @@ class MainActivity : AppCompatActivity(), OnTimerTickListener {
             start()
         }
 
+        binding.waveformView.clearData()
         timer.start()
 
         binding.recordButton.setImageDrawable(
@@ -195,6 +198,9 @@ class MainActivity : AppCompatActivity(), OnTimerTickListener {
             start()
         }
 
+        binding.waveformView.clearWave()
+        timer.start()
+
         player?.setOnCompletionListener {
             stopPlaying()
         }
@@ -207,13 +213,16 @@ class MainActivity : AppCompatActivity(), OnTimerTickListener {
         state = State.RELEASE
         player?.release()
         player = null
+
+        timer.stop()
+
         binding.recordButton.isEnabled = true
         binding.recordButton.alpha = 1.0f
     }
 
     private fun showPermissionSettingDialog() {
         AlertDialog.Builder(this)
-            .setMessage("녹음 권한을 허용해야 앱을 정상적으로 사용할 수 있습니다. 앱 설정 화면으로 진입해 권한을 허용해주세요.")
+            .setMessage(getString(R.string.permission_setting_message))
             .setPositiveButton("권한 설정으로 이동") { _, _ ->
                 navigateToAppSetting()
             }
@@ -251,6 +260,16 @@ class MainActivity : AppCompatActivity(), OnTimerTickListener {
     }
 
     override fun onTick(duration: Long) {
-        binding.waveformView.addAmplitude(recorder?.maxAmplitude?.toFloat() ?: 0f)
+        val millisecond = duration % 1000
+        val second = (duration / 1000) % 60
+        val minutes = (duration / 1000) / 60
+
+        binding.timeTextView.text = String.format("%02d:%02d.%02d", minutes, second, millisecond/10)
+
+        if (state == State.PLAYING) {
+            binding.waveformView.replayAmplitude()
+        } else {
+            binding.waveformView.addAmplitude(recorder?.maxAmplitude?.toFloat() ?: 0f)
+        }
     }
 }
