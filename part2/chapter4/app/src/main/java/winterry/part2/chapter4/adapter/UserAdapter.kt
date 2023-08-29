@@ -9,13 +9,17 @@ import winterry.part2.chapter4.R
 import winterry.part2.chapter4.databinding.ItemUserBinding
 import winterry.part2.chapter4.model.User
 
-class UserAdapter: ListAdapter<User, UserAdapter.ViewHolder>(diffUtil) {
+class UserAdapter(val onClick: (User) -> Unit) :
+    ListAdapter<User, UserAdapter.ViewHolder>(diffUtil) {
 
-    inner class ViewHolder(private val viewBinding: ItemUserBinding):
+    inner class ViewHolder(private val viewBinding: ItemUserBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
             fun bind(item: User) {
                 viewBinding.usernameTextView.text = item.username
+                viewBinding.root.setOnClickListener {
+                onClick(item)
             }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
