@@ -53,6 +53,8 @@ dependencies {
 
     implementation 'org.jsoup:jsoup:1.16.1'
 
+    implementation "com.airbnb.android:lottie:6.1.0"
+
     kapt 'com.tickaroo.tikxml:processor:0.8.13'
 
     testImplementation 'junit:junit:4.13.2'
