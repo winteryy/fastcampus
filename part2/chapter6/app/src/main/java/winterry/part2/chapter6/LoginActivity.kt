@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import winterry.part2.chapter6.Key.Companion.DB_USERS
 import winterry.part2.chapter6.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -48,7 +50,17 @@ class LoginActivity : AppCompatActivity() {
 
             Firebase.auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
+                    val currentUser = Firebase.auth.currentUser
+                    if (task.isSuccessful && currentUser != null) {
+                        val userId = currentUser.uid
+
+                        val user = mutableMapOf<String, Any>()
+                        user["userId"] = userId
+                        user["username"] = email
+
+                        Firebase.database.reference.child(DB_USERS).child(userId)
+                            .updateChildren(user)
+
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
