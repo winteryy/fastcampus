@@ -1,5 +1,6 @@
 package winterry.part2.chapter6.chatdetail
 
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -44,6 +45,7 @@ class ChatAdapter: ListAdapter<ChatItem, ChatAdapter.ViewHolder>(diffUtil) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(currentList[position])
+
     }
 
     companion object {
