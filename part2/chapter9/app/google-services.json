@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502943750085",
+    "project_id": "part2-chapter9-2397c",
+    "storage_bucket": "part2-chapter9-2397c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502943750085:android:1e38bfc6f636d08418ddac",
+        "android_client_info": {
+          "package_name": "winterry.part2.chapter9"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXv8XgNCTqgQxQNHe1t4BLkbEwWVpipvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
