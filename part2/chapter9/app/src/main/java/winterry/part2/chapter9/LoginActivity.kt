@@ -8,10 +8,10 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.kakao.sdk.auth.AuthApiClient
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
@@ -41,6 +41,14 @@ class LoginActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         KakaoSdk.init(this, "0ed885e40738b40d5910397455ed4495")
+
+        if (AuthApiClient.instance.hasToken()) {
+            UserApiClient.instance.accessTokenInfo { tokenInfo, error ->  
+                if (error == null) {
+                    getKakaoAccountInfo()
+                }
+            }
+        }
 
         emailLoginResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode== RESULT_OK) {
@@ -121,8 +129,6 @@ class LoginActivity: AppCompatActivity() {
         Firebase.auth.createUserWithEmailAndPassword(email, uid).addOnCompleteListener {
             if (it.isSuccessful) {
                 updateFirebaseDatabase(user)
-            } else {
-                showErrorToast()
             }
         }.addOnFailureListener {
             if(it is FirebaseAuthUserCollisionException) {
@@ -154,6 +160,7 @@ class LoginActivity: AppCompatActivity() {
         Firebase.database.reference.child("Person").child(uid).updateChildren(personMap)
 
         navigateToMapActivity()
+
     }
 
     private fun navigateToMapActivity() {
