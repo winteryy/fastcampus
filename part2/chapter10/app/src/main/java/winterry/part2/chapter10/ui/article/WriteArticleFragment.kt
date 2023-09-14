@@ -2,13 +2,13 @@ package winterry.part2.chapter10.ui.article
 
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
@@ -22,15 +22,12 @@ import java.util.UUID
 class WriteArticleFragment : Fragment(R.layout.fragment_write_article) {
 
     private lateinit var binding: FragmentWriteArticleBinding
+    private lateinit var viewModel: WriteArticleViewModel
 
-    private var selectedUri: Uri? = null
     private val pickMedia =
         registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
             if (uri != null) {
-                selectedUri = uri
-                binding.photoImageView.setImageURI(uri)
-                binding.plusButton.isVisible = false
-                binding.deleteButton.isVisible = true
+                viewModel.updateSelectedUri(uri)
             }
         }
 
@@ -38,7 +35,11 @@ class WriteArticleFragment : Fragment(R.layout.fragment_write_article) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentWriteArticleBinding.bind(view)
 
-        startPicker()
+        setupViewModel()
+
+        if(viewModel.selectedUri.value == null) {
+            startPicker()
+        }
         setupPhotoImageView()
         setupDeleteButton()
         setupSubmitButton(view)
@@ -46,18 +47,30 @@ class WriteArticleFragment : Fragment(R.layout.fragment_write_article) {
 
     }
 
+    private fun setupViewModel() {
+        viewModel = ViewModelProvider(requireActivity()).get<WriteArticleViewModel>()
+        viewModel.selectedUri.observe(viewLifecycleOwner) {
+            binding.photoImageView.setImageURI(it)
+
+            if (it != null) {
+                binding.plusButton.isVisible = false
+                binding.deleteButton.isVisible = true
+            } else {
+                binding.deleteButton.isVisible = false
+                binding.plusButton.isVisible = true
+            }
+        }
+    }
+
     private fun setupDeleteButton() {
         binding.deleteButton.setOnClickListener {
-            binding.photoImageView.setImageURI(null)
-            selectedUri = null
-            binding.deleteButton.isVisible = false
-            binding.plusButton.isVisible = true
+            viewModel.updateSelectedUri(null)
         }
     }
 
     private fun setupPhotoImageView() {
         binding.photoImageView.setOnClickListener {
-            if (selectedUri == null) {
+            if (viewModel.selectedUri.value == null) {
                 startPicker()
             }
         }
@@ -67,8 +80,8 @@ class WriteArticleFragment : Fragment(R.layout.fragment_write_article) {
         binding.submitButton.setOnClickListener {
             showProgress()
 
-            if (selectedUri != null) {
-                val photoUri = selectedUri ?: return@setOnClickListener
+            if (viewModel.selectedUri.value != null) {
+                val photoUri = viewModel.selectedUri.value ?: return@setOnClickListener
                 uploadImage(
                     uri = photoUri,
                     successHandler = {

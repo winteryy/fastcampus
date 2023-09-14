@@ -17,6 +17,12 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bookmarkArticleFragment"
+            app:destination="@id/bookmarkArticleFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -38,5 +44,23 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_right"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="winterry.part2.chapter10.ui.article.ArticleFragment"
+        android:label="글 상세"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="articleId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkArticleFragment"
+        android:name="winterry.part2.chapter10.ui.bookmark.BookmarkArticleFragment"
+        android:label="북마크"
+        tools:layout="@layout/fragment_bookmark_article">
+        <action
+            android:id="@+id/action_bookmarkArticleFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
 </navigation>
