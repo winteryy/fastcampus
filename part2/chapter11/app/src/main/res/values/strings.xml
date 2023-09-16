@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">chapter11</string>
+    <string name="app_name">별다방커피</string>
     <string name="order">order</string>
     <string name="home">home</string>
+    <string name="appbar_title_text">%s 님,\n오늘도 커피 한 잔 어떠세요?</string>
+    <string name="appbar_star_title">%d/%d★</string>
 </resources>
