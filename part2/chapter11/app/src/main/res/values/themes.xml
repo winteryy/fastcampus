@@ -3,6 +3,11 @@
     <style name="Base.Theme.Chapter11" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/theme_green</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container_green</item>
+        <item name="colorSecondaryContainer">@color/secondary_container_green</item>
+        <item name="colorSurface">@color/surface_beige</item>
+        <item name="colorPrimary">@color/primary_brown</item>
     </style>
 
     <style name="Theme.Chapter11" parent="Base.Theme.Chapter11" />

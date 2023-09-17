@@ -4,5 +4,9 @@
     "starCount": 10,
     "totalCount": 12
   },
-  "appbarImage": "https://picsum.photos/200/100"
+  "appbarImage": "https://picsum.photos/200/100",
+  "banner": {
+    "image": "https://picsum.photos/200/240",
+    "contentDescription": "현재 진행 중인 이벤트, 아메리카노 50% 세일중"
+  }
 }
