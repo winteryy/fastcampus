@@ -9,11 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import winterry.part2.chapter12.databinding.ItemVideoBinding
 
-class VideoAdapter(private val context: Context) : ListAdapter<VideoItem, VideoAdapter.ViewHolder>(diffUtil) {
+class VideoAdapter(
+    private val context: Context,
+    private val onClick: (VideoEntity) -> Unit
+) : ListAdapter<VideoEntity, VideoAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(private val binding: ItemVideoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: VideoItem) {
+        fun bind(item: VideoEntity) {
             binding.titleTextView.text = item.title
             binding.subTitleTextView.text = context.getString(
                 R.string.sub_title_video_info,  item.channelName, item.viewCount, item.dateText
@@ -25,6 +28,10 @@ class VideoAdapter(private val context: Context) : ListAdapter<VideoItem, VideoA
             Glide.with(binding.videoThumbnailImageView)
                 .load(item.videoThumb)
                 .into(binding.videoThumbnailImageView)
+
+            binding.root.setOnClickListener {
+                onClick.invoke(item)
+            }
         }
     }
 
@@ -43,12 +50,12 @@ class VideoAdapter(private val context: Context) : ListAdapter<VideoItem, VideoA
     }
 
     companion object {
-        val diffUtil = object: DiffUtil.ItemCallback<VideoItem>() {
-            override fun areItemsTheSame(oldItem: VideoItem, newItem: VideoItem): Boolean {
+        val diffUtil = object: DiffUtil.ItemCallback<VideoEntity>() {
+            override fun areItemsTheSame(oldItem: VideoEntity, newItem: VideoEntity): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: VideoItem, newItem: VideoItem): Boolean {
+            override fun areContentsTheSame(oldItem: VideoEntity, newItem: VideoEntity): Boolean {
                 return oldItem == newItem
             }
 

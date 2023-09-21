@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<winterry.part2.chapter12.ExoPlayerMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/player_scene"
+    android:id="@+id/motionLayout"
     tools:context=".MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +65,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/black"
+        app:controller_layout_id="@layout/layout_yotube_player_controller"
+        app:resize_mode="fixed_width"
         app:layout_constraintBottom_toBottomOf="@id/videoPlayerContainer"
         app:layout_constraintEnd_toEndOf="@id/videoPlayerContainer"
         app:layout_constraintStart_toStartOf="@id/videoPlayerContainer"
@@ -134,4 +139,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</winterry.part2.chapter12.ExoPlayerMotionLayout>
