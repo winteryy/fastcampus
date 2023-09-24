@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name="winterry.part3.chapter2.PinActivity" />
+        <activity android:name="winterry.part3.chapter2.IdentityInputActivity" />
+        <activity android:name="winterry.part3.chapter2.VerifyOtpActivity" />
     </application>
 
 </manifest>
