@@ -46,10 +46,8 @@ object HashUtil {
         try {
             val messageDigest = MessageDigest.getInstance(HASH_TYPE)
 
-            // minSdkVersion이 19이상이면 체크 안해도 됨
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                messageDigest.update(appInfo.toByteArray(StandardCharsets.UTF_8))
-            }
+            messageDigest.update(appInfo.toByteArray(StandardCharsets.UTF_8))
+
 
             val hashSignature = Arrays.copyOfRange(messageDigest.digest(), 0, NUM_HASHED_BYTES)
             val base64Hash = Base64
