@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import winterry.part3.chapter4.databinding.ActivityMainBinding
 import winterry.part3.chapter4.mvc.MvcActivity
+import winterry.part3.chapter4.mvi.MviActivity
+import winterry.part3.chapter4.mvp.MvpActivity
+import winterry.part3.chapter4.mvvm.MvvmActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,15 +26,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openMvp() {
-
+        startActivity(Intent(this, MvpActivity::class.java))
     }
 
     fun openMvvm() {
-
+        startActivity(Intent(this, MvvmActivity::class.java))
     }
 
     fun openMvi() {
-
+        startActivity(Intent(this, MviActivity::class.java))
     }
 
 

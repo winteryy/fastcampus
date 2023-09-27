@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name="winterry.part3.chapter4.mvc.MvcActivity" />
+        <activity android:name="winterry.part3.chapter4.mvp.MvpActivity" />
+        <activity android:name="winterry.part3.chapter4.mvvm.MvvmActivity" />
+        <activity android:name="winterry.part3.chapter4.mvi.MviActivity" />
     </application>
 
 </manifest>
