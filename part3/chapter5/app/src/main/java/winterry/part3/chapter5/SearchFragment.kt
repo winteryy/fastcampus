@@ -8,7 +8,9 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import winterry.part3.chapter5.databinding.FragmentSearchBinding
-import winterry.part3.chapter5.list.viewholder.ListAdapter
+import winterry.part3.chapter5.list.ItemHandler
+import winterry.part3.chapter5.list.ListAdapter
+import winterry.part3.chapter5.model.ListItem
 import winterry.part3.chapter5.repository.SearchRepositoryImpl
 
 class SearchFragment: Fragment() {
@@ -17,7 +19,7 @@ class SearchFragment: Fragment() {
         SearchViewModel.SearchViewModelFactory(SearchRepositoryImpl(RetrofitManager.searchService)) }
     private var binding: FragmentSearchBinding? = null
 
-    private val adapter by lazy { ListAdapter() }
+    private val adapter by lazy { ListAdapter(Handler(viewModel)) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,6 +62,12 @@ class SearchFragment: Fragment() {
                 }
             }
             adapter.submitList(it)
+        }
+    }
+
+    class Handler(private val viewModel: SearchViewModel): ItemHandler {
+        override fun onClickFavorite(item: ListItem) {
+            viewModel.toggleFavorite(item)
         }
     }
 }

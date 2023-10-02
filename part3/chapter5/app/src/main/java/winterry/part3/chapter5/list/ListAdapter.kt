@@ -1,4 +1,4 @@
-package winterry.part3.chapter5.list.viewholder
+package winterry.part3.chapter5.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import winterry.part3.chapter5.databinding.ItemImageBinding
 import winterry.part3.chapter5.databinding.ItemVideoBinding
+import winterry.part3.chapter5.list.viewholder.ImageViewHolder
+import winterry.part3.chapter5.list.viewholder.VideoViewHolder
 import winterry.part3.chapter5.model.ImageItem
 import winterry.part3.chapter5.model.ListItem
 
-class ListAdapter: ListAdapter<ListItem, RecyclerView.ViewHolder>(diffUtil) {
+class ListAdapter(
+    private val itemHandler: ItemHandler? = null
+): ListAdapter<ListItem, RecyclerView.ViewHolder>(diffUtil) {
 
     override fun getItemViewType(position: Int): Int {
         return if(getItem(position) is ImageItem) {
@@ -22,13 +26,13 @@ class ListAdapter: ListAdapter<ListItem, RecyclerView.ViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return if(viewType==IMAGE) {
+        return if(viewType== IMAGE) {
             ImageViewHolder(
-                ItemImageBinding.inflate(inflater, parent, false)
+                ItemImageBinding.inflate(inflater, parent, false), itemHandler
             )
         } else {
             VideoViewHolder(
-                ItemVideoBinding.inflate(inflater, parent, false)
+                ItemVideoBinding.inflate(inflater, parent, false), itemHandler
             )
         }
     }

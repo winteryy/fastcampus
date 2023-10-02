@@ -7,6 +7,11 @@
         <variable
             name="item"
             type="winterry.part3.chapter5.model.ImageItem" />
+        
+        <variable
+            name="handler"
+            type="winterry.part3.chapter5.list.ItemHandler" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -68,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:favorite="@{item.favorite}"
+            android:onClick="@{() -> handler.onClickFavorite(item)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

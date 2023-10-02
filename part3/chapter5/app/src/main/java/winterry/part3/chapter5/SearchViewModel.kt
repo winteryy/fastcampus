@@ -6,7 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import winterry.part3.chapter5.model.ImageItem
 import winterry.part3.chapter5.model.ListItem
+import winterry.part3.chapter5.model.VideoItem
 import winterry.part3.chapter5.repository.SearchRepository
 
 class SearchViewModel(private val searchRepository: SearchRepository) : ViewModel() {
@@ -32,6 +34,32 @@ class SearchViewModel(private val searchRepository: SearchRepository) : ViewMode
                 _listLiveData.value = emptyList()
             })
         )
+    }
+
+    fun toggleFavorite(item: ListItem) {
+        _listLiveData.value = _listLiveData.value?.map {
+            if (it == item) {
+                when(it) {
+                    is ImageItem -> {
+                        it.copy(isFavorite = !item.isFavorite)
+                    }
+                    is VideoItem -> {
+                        it.copy(isFavorite = !item.isFavorite)
+                    }
+                    else -> {
+                        it
+                    }
+                }.also { changeItem ->
+                    if (Common.favoriteList.contains(item)) {
+                        Common.favoriteList.remove(item)
+                    } else {
+                        Common.favoriteList.add(changeItem)
+                    }
+                }
+            } else {
+                it
+            }
+        }
     }
 
     override fun onCleared() {

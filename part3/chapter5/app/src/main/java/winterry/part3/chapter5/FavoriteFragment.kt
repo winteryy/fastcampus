@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import winterry.part3.chapter5.databinding.FragmentFavoriteBinding
-import winterry.part3.chapter5.list.viewholder.ListAdapter
+import winterry.part3.chapter5.list.ListAdapter
 
 class FavoriteFragment: Fragment() {
 
@@ -29,6 +30,20 @@ class FavoriteFragment: Fragment() {
         binding?.apply {
             recyclerView.adapter = adapter
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding?.apply {
+            if (Common.favoriteList.isEmpty()) {
+                emptyTextView.isVisible = true
+                recyclerView.isVisible = false
+            } else {
+                emptyTextView.isVisible = false
+                recyclerView.isVisible = true
+            }
+        }
+        adapter.submitList(Common.favoriteList.sortedBy { it.dateTime })
     }
 
     override fun onDestroyView() {
