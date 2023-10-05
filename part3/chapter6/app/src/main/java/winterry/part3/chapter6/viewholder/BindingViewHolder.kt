@@ -3,6 +3,7 @@ package winterry.part3.chapter6.viewholder
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import winterry.part3.chapter6.model.ListItem
+import winterry.part3.chapter6.BR
 
 abstract class BindingViewHolder<VB: ViewDataBinding>(
     private val binding: VB

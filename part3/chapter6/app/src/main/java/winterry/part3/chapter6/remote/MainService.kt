@@ -1,4 +1,4 @@
-package winterry.part3.chapter6
+package winterry.part3.chapter6.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Query

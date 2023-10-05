@@ -33,6 +33,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
+            android:text="@{item.name}"
             android:maxLines="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +49,7 @@
             android:textColor="#F00000"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/nameTextView"
+            app:layout_constraintTop_toBottomOf="@id/nameTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:moneyText="@{item.price}" />
@@ -62,7 +63,7 @@
             android:textSize="13sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/nameTextView"
-            app:layout_constraintStart_toStartOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/nameTextView"
             app:layout_constraintTop_toBottomOf="@id/priceTextView"
             app:visible="@{item.badge != null}" />
 

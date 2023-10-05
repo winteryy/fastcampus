@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import winterry.part3.chapter6.MainService
+import winterry.part3.chapter6.remote.MainService
 import javax.inject.Singleton
 
 @Module

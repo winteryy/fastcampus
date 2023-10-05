@@ -8,6 +8,8 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import winterry.part3.chapter6.model.ListItem
+import winterry.part3.chapter6.remote.ListItemDeserializer
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -19,7 +21,9 @@ object RetrofitModule {
     @Singleton
     fun providesConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create(
-            GsonBuilder().create()
+            GsonBuilder()
+                .registerTypeAdapter(ListItem::class.java, ListItemDeserializer())
+                .create()
         )
     }
 
