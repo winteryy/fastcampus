@@ -11,14 +11,14 @@ import winterry.part3.pagingprac4.model.Item
 import winterry.part3.pagingprac4.network.GitApi
 import winterry.part3.pagingprac4.network.RetrofitInstance
 
-class MainViewModel: ViewModel() {
+class MainViewModel(private val str: String): ViewModel() {
 
     private val api = RetrofitInstance.getInstance().create(GitApi::class.java)
 
     val items: Flow<PagingData<Item>> = Pager(
         config = PagingConfig(30),
         pagingSourceFactory = {
-            GithubPagingSource(api, "android")
+            GithubPagingSource(api, str)
         }
     )
         .flow

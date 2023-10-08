@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="150dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/nameTextView"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/urlTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="nameArea" />
@@ -22,9 +22,9 @@
         android:layout_height="wrap_content"
         android:textSize="10sp"
         android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/nameTextView"
-        app:layout_constraintTop_toTopOf="parent"
         tools:text="url" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
