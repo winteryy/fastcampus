@@ -34,7 +34,6 @@ class GithubPagingSource(
                 throw Exception("exception")
             }
 
-            //
 
             LoadResult.Page(
                 data = data,

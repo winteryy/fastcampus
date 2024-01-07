@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+            name="item"
+            type="com.winterry.chapter7.model.ContentEntity" />
+        
+        <variable
+            name="handler"
+            type="com.winterry.chapter7.MainActivity.Handler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> handler.onClickItem(item)}"
+        android:onLongClick="@{() -> handler.onLongClickItem(item)}"
+        android:paddingStart="@dimen/padding"
+        android:paddingEnd="@dimen/padding"
+        android:paddingTop="@dimen/padding_small"
+        android:paddingBottom="@dimen/padding_small">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/contentCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@{item.done}"
+            android:text="@{item.content}"
+            android:textAppearance="@style/TextAppearance.App.Large.Bold"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:onCheckedChanged="@{(button, check) -> handler.onCheckedItem(item, check)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="dddddd" />
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/memoTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:hint="없음"
+            android:text="@{item.memo}"
+            android:textAppearance="@style/TextAppearance.App.Small"
+            android:drawableStart="@drawable/baseline_comment_24"
+            android:drawablePadding="@dimen/padding_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contentCheckBox" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
