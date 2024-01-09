@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 <!--    스텝 2: uses-permission에 android.permission.INTERNET를 추가합니다.-->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"

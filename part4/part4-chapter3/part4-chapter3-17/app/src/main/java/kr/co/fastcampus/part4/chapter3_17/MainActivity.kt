@@ -9,14 +9,24 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Checkbox
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ActivityCompat
 import kr.co.fastcampus.part4.chapter3_17.ui.theme.ScaffoldTheme
 
 class MainActivity : ComponentActivity() {
@@ -58,13 +68,37 @@ fun CheckBoxWithContent(
 fun ScaffoldEx() {
     var checked by remember { mutableStateOf(false) }
 
-    Scaffold(topBar = {
-        // 스텝 1: `topBar`를 `TopAppBar`로 채워 봅시다.
-
-    }) {
+    Scaffold(
+        topBar = {
+            // 스텝 1: `topBar`를 `TopAppBar`로 채워 봅시다.
+            TopAppBar(
+                navigationIcon = {
+                    IconButton(onClick = {}) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack,
+                            contentDescription = "뒤로 가기"
+                        )
+                    }
+                },
+                title = {
+                    Text(text = "Scaffold App")
+                },
+            )
+        },
+        floatingActionButton = {
+            FloatingActionButton(onClick = {}) {
+                Icon(imageVector = Icons.Filled.Add, contentDescription = "add", tint = Color.White)
+            }
+        }
+    ) {
         Surface(modifier = Modifier.padding(8.dp)) {
             // 스텝 2: 아래에 CheckBoxWithContent를 넣어봅시다.
-
+            CheckBoxWithContent(
+                checked = checked,
+                toggleState = { checked = !checked }
+            ) {
+                Text(text = "컴포즈를 좋아합니다.")
+            }
         }
     }
 }
