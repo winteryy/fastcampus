@@ -9,10 +9,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import kr.co.fastcampus.part4.chapter5_3.ui.theme.LiveDataTheme
@@ -35,32 +38,53 @@ class MainActivity : ComponentActivity() {
 class ToDoViewModel : ViewModel() {
     // 단계 2: text 상태를 라이브 데이터로 변경합니다.
     // 사용하는 측에서는 `text.observeAsState()`로 구독하세요.
-    val text = mutableStateOf("")
+//    val text = mutableStateOf("")
+    private val _text = MutableLiveData("")
+    val text: LiveData<String> = _text
 
     // 단계 3: toDoList 상태를 라이브 데이터로 변경합니다.
     // 모든 연산에서 List를 새로 만들어 라이브 데이터로 전달해야 합니다!!!
     // (초 비추!!)
-    val toDoList = mutableStateListOf<ToDoData>()
+//    val toDoList = mutableStateListOf<ToDoData>()
+    private val _rawToDoList = mutableListOf<ToDoData>()
+    private val _toDoList = MutableLiveData<List<ToDoData>>(_rawToDoList)
+    val toDoList: LiveData<List<ToDoData>> = _toDoList
+
+    val setText: (String) -> Unit = {
+        _text.value = it
+    }
 
     val onSubmit: (String) -> Unit = {
-        val key = (toDoList.lastOrNull()?.key ?: 0) + 1
-        toDoList.add(ToDoData(key, it))
-        text.value = ""
+        val key = (_rawToDoList.lastOrNull()?.key ?: 0) + 1
+        _rawToDoList.add(ToDoData(key, it))
+        _toDoList.value = mutableListOf<ToDoData>().also { list ->
+            list.addAll(_rawToDoList)
+        }
+        _text.value = ""
     }
 
     val onEdit: (Int, String) -> Unit = { key, newText ->
-        val i = toDoList.indexOfFirst { it.key == key }
-        toDoList[i] = toDoList[i].copy(text = newText)
+        val i = _rawToDoList.indexOfFirst { it.key == key }
+        _rawToDoList[i] = _rawToDoList[i].copy(text = newText)
+        _toDoList.value = mutableListOf<ToDoData>().also { list ->
+            list.addAll(_rawToDoList)
+        }
     }
 
     val onToggle: (Int, Boolean) -> Unit = { key, checked ->
-        val i = toDoList.indexOfFirst { it.key == key }
-        toDoList[i] = toDoList[i].copy(done = checked)
+        val i = _rawToDoList.indexOfFirst { it.key == key }
+        _rawToDoList[i] = _rawToDoList[i].copy(done = checked)
+        _toDoList.value = mutableListOf<ToDoData>().also { list ->
+            list.addAll(_rawToDoList)
+        }
     }
 
     val onDelete: (Int) -> Unit = { key ->
-        val i = toDoList.indexOfFirst { it.key == key }
-        toDoList.removeAt(i)
+        val i = _rawToDoList.indexOfFirst { it.key == key }
+        _rawToDoList.removeAt(i)
+        _toDoList.value = mutableListOf<ToDoData>().also { list ->
+            list.addAll(_rawToDoList)
+        }
     }
 }
 
@@ -69,12 +93,13 @@ fun TopLevel(viewModel: ToDoViewModel = viewModel()) {
     Scaffold {
         Column {
             ToDoInput(
-                text = viewModel.text.value, onTextChange = {
-                    viewModel.text.value = it
-                }, onSubmit = viewModel.onSubmit
+                text = viewModel.text.observeAsState("").value,
+                onTextChange = viewModel.setText,
+                onSubmit = viewModel.onSubmit
             )
+            val items = viewModel.toDoList.observeAsState(emptyList()).value
             LazyColumn {
-                items(items = viewModel.toDoList, key = { it.key }) { toDoData ->
+                items(items = items, key = { it.key }) { toDoData ->
                     ToDo(
                         toDoData = toDoData,
                         onEdit = viewModel.onEdit,
@@ -156,6 +181,7 @@ fun ToDo(
                         }
                     }
                 }
+
                 true -> {
                     Row(
                         modifier = Modifier.padding(8.dp),
