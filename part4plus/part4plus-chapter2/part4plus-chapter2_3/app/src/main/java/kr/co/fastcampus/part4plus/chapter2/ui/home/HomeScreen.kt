@@ -23,7 +23,7 @@ fun HomeScreen(homeState: HomeState) {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            val memoList = remember { memos }
+            val memoList = remember { memos.sortedBy { it.id } }.toMutableStateList()
             val onClickAction: (Int) -> Unit = {
                 homeState.showContent(
                     it
@@ -80,7 +80,7 @@ fun ColumnScope.MemoList(onClickAction: (Int) -> Unit, memoList: SnapshotStateLi
             .weight(1f)
     ) {
         items(
-            items = memoList.sortedBy { it.id },
+            items = memoList,
             key = { it.id }
         ) { memo ->
             Card(
