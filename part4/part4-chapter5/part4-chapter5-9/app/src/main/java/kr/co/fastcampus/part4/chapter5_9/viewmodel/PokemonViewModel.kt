@@ -51,8 +51,10 @@ class PokemonViewModel @Inject constructor(
                         // `prevKey`와 `nextKey`를 만들어 전달하자.
                         return LoadResult.Page(
                             data = pokemons.results,
-                            prevKey = null,
-                            nextKey = null
+                            prevKey = pokemons.previous?.substringAfter("offset=")
+                                ?.substringBefore("&")?.toInt(),
+                            nextKey = pokemons.next?.substringAfter("offset=")
+                                ?.substringBefore("&")?.toInt()
                         )
                     } catch (e: Exception) {
                         Log.e("EEE", "error: $e")

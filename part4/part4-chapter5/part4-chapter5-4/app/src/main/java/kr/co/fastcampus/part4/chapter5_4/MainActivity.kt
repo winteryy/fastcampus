@@ -52,23 +52,39 @@ fun Greeting() {
 
     // 단계 6: LocalElevation의 값을 `CompositionLocalProvider`로
     // 바꾸어 봅시다.
-    Card(
-        modifier = Modifier.padding(8.dp)
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
+    CompositionLocalProvider(LocalElevation provides 12.dp) {
+        Card(
+            modifier = Modifier.padding(8.dp),
+            elevation = LocalElevation.current
         ) {
-            Text("안녕하세요. 패스트캠퍼스")
-            Text("스안녕하세요. 패스트캠퍼")
-            Text("퍼스안녕하세요. 패스트캠")
-            Text("캠퍼스안녕하세요. 패스트")
-            Text("트캠퍼스안녕하세요. 패스")
-            Text("스트캠퍼스안녕하세요. 패")
-            Text("패스트캠퍼스안녕하세요.")
-            // 단계 3: `LocalContext.current`의 `resources`를 출력해보세요.
+            CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.disabled) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                ) {
+                    Text("안녕하세요. 패스트캠퍼스")
+                    Text("${LocalContentColor.current}")
+                    CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.high) {
+                        Text("스안녕하세요. 패스트캠퍼")
+                        CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+                            Text("퍼스안녕하세요. 패스트캠")
+                        }
+                        CompositionLocalProvider(LocalContentColor provides Color.Magenta) {
+                            Text("캠퍼스안녕하세요. 패스트")
+                            Text("트캠퍼스안녕하세요. 패스")
+                            Text("${LocalContentColor.current}")
+                        }
+                    }
+                    Text("스트캠퍼스안녕하세요. 패")
+                    Text("패스트캠퍼스안녕하세요.")
+                    // 단계 3: `LocalContext.current`의 `resources`를 출력해보세요.
+                }
+            }
         }
     }
+
 }
+
+val LocalElevation = compositionLocalOf { 8.dp }
 
 @Preview(showBackground = true)
 @Composable
