@@ -10,38 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75debd18-7e56-4902-a447-44febd8a8759" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Color.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Theme.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Type.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../part4plus-chapter2/part4plus-chapter2_4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part4plus-chapter2/part4plus-chapter2_4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/PrimaryButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/SecondaryBorderlessButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/SecondaryButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/UnderlinedTextButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Alert.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/BaseDialogPopup.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Default.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Preview.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Rating.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/button/DialogButtonsColumn.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/content/DialogContentWrapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/content/RatingContent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/title/DialogTitleWrapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/Category.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/buttons/LeadingIconData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogContent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogText.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogTitle.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Paddings.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/color/MyColors.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/util/TextUtil.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_back.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_information.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_rating.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_send.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_warning.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/color/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Type.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +64,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -76,15 +82,32 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/LHK/Documents/fastcampus/part4plus/chapter3/app/src/main/java/com/winterry/movieapp/ui/components/buttons",
     "project.structure.last.edited": "Gradle",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LHK\Documents\fastcampus\part4plus\chapter3\app\src\main\java\com\winterry\movieapp\ui\components\buttons" />
+      <recent name="C:\Users\LHK\Documents\fastcampus\part4plus\chapter3\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LHK\Documents\fastcampus\part4plus\chapter3\app\src\main\java\com\winterry\movieapp\ui\theme\color" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.winterry.movieapp.ui.models" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.winterry.movieapp.ui.models.dialog" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Compose Preview.BaseDialogPopupPreview">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="MovieApp.app.main" />
       <option name="DEPLOY" value="true" />
@@ -152,6 +175,79 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BaseDialogPopupPreview" type="ComposePreviewRunConfiguration" temporary="true">
+      <module name="MovieApp.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="--es composable com.winterry.movieapp.ui.components.dialog.BaseDialogPopupKt.BaseDialogPopupPreview" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="androidx.compose.ui.tooling.PreviewActivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="true" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <compose-preview-run-configuration composable-fqn="com.winterry.movieapp.ui.components.dialog.BaseDialogPopupKt.BaseDialogPopupPreview" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Compose Preview.BaseDialogPopupPreview" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
