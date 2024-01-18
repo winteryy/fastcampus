@@ -4,48 +4,39 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <config>
+          <theme>@style/Theme.MovieApp</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml">
+        <config>
+          <theme>@style/Theme.MovieApp</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75debd18-7e56-4902-a447-44febd8a8759" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/PrimaryButton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/SecondaryBorderlessButton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/SecondaryButton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/buttons/UnderlinedTextButton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Alert.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/BaseDialogPopup.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Default.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Preview.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/Rating.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/button/DialogButtonsColumn.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/content/DialogContentWrapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/content/RatingContent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/dialog/components/title/DialogTitleWrapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/Category.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/buttons/LeadingIconData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogButton.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogContent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogText.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/models/dialog/DialogTitle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Paddings.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/color/MyColors.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/util/TextUtil.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_back.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_information.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_rating.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_send.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_warning.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/detail/DetailFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/FeedFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/color/Color.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Theme.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/theme/Type.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +56,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="layoutResourceFile" />
+        <option value="navigationResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -85,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/LHK/Documents/fastcampus/part4plus/chapter3/app/src/main/java/com/winterry/movieapp/ui/components/buttons",
+    "last_opened_file_path": "C:/Users/LHK/Documents/fastcampus/part2/chapter2",
     "project.structure.last.edited": "Gradle",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.0",
@@ -107,7 +100,7 @@
       <recent name="com.winterry.movieapp.ui.models.dialog" />
     </key>
   </component>
-  <component name="RunManager" selected="Compose Preview.BaseDialogPopupPreview">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="MovieApp.app.main" />
       <option name="DEPLOY" value="true" />
