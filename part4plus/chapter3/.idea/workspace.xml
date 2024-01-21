@@ -22,20 +22,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75debd18-7e56-4902-a447-44febd8a8759" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/migrations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/detail/DetailFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/FeedFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../part2/chapter2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/chapter2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/App.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/di/MovieDataModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/network/api/IMovieAppNetworkApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/network/api/MovieAppNetworkApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/network/model/MovieResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/IMovieDataSource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/MovieRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/input/IFeedViewModelInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/output/FeedState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/output/IFeedViewModelOutput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/viewmodel/FeedViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/api/ApiService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/di/NetworkModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/ApiResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/ApiResult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/NetworkRequestInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/RequestType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/HeaderParser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/NetworkRequestFactory.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/NetworkRequestFactoryImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/StringConverterFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/detail/DetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/detail/DetailFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/FeedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/FeedFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +68,44 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -59,32 +113,40 @@
         <option value="Kotlin File" />
         <option value="layoutResourceFile" />
         <option value="navigationResourceFile" />
+        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2b02XgLRotK4L5F4zH8nJYKpdcN" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/LHK/Documents/fastcampus/part2/chapter2",
-    "project.structure.last.edited": "Gradle",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;android-custom-viewC:/Users/LHK/.gradle/caches/modules-2/files-2.1/androidx.compose.ui/ui-android/1.5.0/d096c6e1ab398990ce7c05e3003f79320b4235c/ui-android-1.5.0-sources.jar!/androidMain/androidx/compose/ui/platform/ComposeView.android.kt_SELECTED&quot;: &quot;AbstractComposeView&quot;,
+    &quot;android-custom-viewC:/Users/LHK/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.5.4/5404b0f8aeccb2fe882bee99ef8843711c01c156/fragment-1.5.4-sources.jar!/androidx/fragment/app/FragmentContainerView.kt_SELECTED&quot;: &quot;FragmentContainerView&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/LHK/Documents/fastcampus/part2/chapter2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\LHK\Documents\fastcampus\part4plus\chapter3\app\src\main\java\com\winterry\movieapp\ui\components\buttons" />
@@ -97,6 +159,8 @@
       <recent name="com.winterry.movieapp.ui.models" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.winterry.movieapp.features.feed.presentation.output" />
+      <recent name="com.winterry.movieapp.features.common.network.api" />
       <recent name="com.winterry.movieapp.ui.models.dialog" />
     </key>
   </component>

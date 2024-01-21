@@ -8,7 +8,9 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import com.winterry.movieapp.ui.theme.MovieAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment: Fragment() {
 
     override fun onCreateView(
@@ -16,7 +18,7 @@ class DetailFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return ComposeView(requireContext()).apply {
+        return ComposeView(requireActivity()).apply {
             setContent {
                 MovieAppTheme {
                     Text("DetailFragment")
