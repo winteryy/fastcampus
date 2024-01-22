@@ -10,55 +10,42 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.winterry.movieapp.features.common.entity.CategoryEntity
+import com.winterry.movieapp.features.feed.presentation.input.IFeedViewModelInput
 import com.winterry.movieapp.ui.theme.MovieAppTheme
 import com.winterry.movieapp.ui.theme.Paddings
 
 @Composable
-fun CategoryRow() {
+fun CategoryRow(
+    categoryEntity: CategoryEntity,
+    input: IFeedViewModelInput
+) {
     Column {
-        CategoryTitle("Action")
+        CategoryTitle(categoryEntity.genre)
         LazyRow(
             contentPadding = PaddingValues(
                 horizontal = Paddings.large
             )
         ) {
-//            itemsIndexed()
+            itemsIndexed(categoryEntity.movieFeedEntities) { _, item ->
+                MovieItem(
+                    movie = item,
+                    input = input
+                )
+            }
 
-            item {
-                MovieItem()
-            }
-            item {
-                MovieItem()
-            }
-            item {
-                MovieItem()
-            }
-            item {
-                MovieItem()
-            }
-            item {
-                MovieItem()
-            }
         }
     }
 }
 
 @Composable
-fun CategoryTitle(s: String) {
+fun CategoryTitle(genre: String) {
     Text(
-        text = "Action",
+        text = genre,
         modifier = Modifier
             .padding(
                 vertical = Paddings.large,
                 horizontal = Paddings.extra
             )
     )
-}
-
-@Preview
-@Composable
-fun CategoryRowPreview() {
-    MovieAppTheme {
-        CategoryRow()
-    }
 }

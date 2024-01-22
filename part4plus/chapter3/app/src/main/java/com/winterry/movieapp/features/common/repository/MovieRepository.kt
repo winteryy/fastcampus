@@ -1,17 +1,32 @@
 package com.winterry.movieapp.features.common.repository
 
+import com.winterry.movieapp.features.common.entity.CategoryEntity
+import com.winterry.movieapp.features.common.entity.EntityWrapper
+import com.winterry.movieapp.features.common.entity.MovieDetailEntity
 import com.winterry.movieapp.features.common.network.api.IMovieAppNetworkApi
+import com.winterry.movieapp.features.feed.data.FeedConstants
+import com.winterry.movieapp.features.feed.data.mapper.CategoryMapper
+import com.winterry.movieapp.features.feed.domain.enum.SortOrder
 import com.winterry.movieapp.library.network.model.ApiResponse
+import com.winterry.movieapp.library.storage.IStorage
 import javax.inject.Inject
 
 class MovieRepository @Inject constructor(
-    private val movieNetworkApi: IMovieAppNetworkApi
+    private val movieNetworkApi: IMovieAppNetworkApi,
+    private val storage: IStorage,
+    private val categoryMapper: CategoryMapper
 ) : IMovieDataSource {
-    override suspend fun getMovieList() {
-        val data = movieNetworkApi.getMovies().response
+    override suspend fun getCategories(sortOrder: SortOrder?): EntityWrapper<List<CategoryEntity>> {
+        return categoryMapper.mapFromResult(
+            result = movieNetworkApi.getMovies(),
+            extra = sortOrder
+        )
+    }
 
-        if(data is ApiResponse.Success) {
-            val movieList = data.data
-        }
+    override suspend fun getMovieDetail(movieName: String): MovieDetailEntity {
+        return storage
+            .get<List<MovieDetailEntity>>(FeedConstants.MOVIE_LIST_KEY)
+            ?.single { it.title == movieName }
+            ?: MovieDetailEntity()
     }
 }

@@ -22,37 +22,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75debd18-7e56-4902-a447-44febd8a8759" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/App.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/di/MovieDataModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/network/api/IMovieAppNetworkApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/network/api/MovieAppNetworkApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/network/model/MovieResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/IMovieDataSource.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/MovieRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/input/IFeedViewModelInput.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/output/FeedState.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/output/IFeedViewModelOutput.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/viewmodel/FeedViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/api/ApiService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/di/NetworkModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/ApiResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/ApiResult.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/NetworkRequestInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/model/RequestType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/HeaderParser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/NetworkRequestFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/NetworkRequestFactoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/network/retrofit/StringConverterFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/entity/CategoryEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/entity/EntityWrapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/entity/MovieDetailEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/entity/MovieFeedItemEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/mapper/BaseMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/data/FeedConstants.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/data/mapper/CategoryMapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/data/mapper/toMovieDetailEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/domain/di/FeedUseCaseModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/domain/enum/SortOrder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/domain/usecase/GetFeedCategoryUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/domain/usecase/IGetFeedCategoryUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/screen/FeedScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/IStorage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/StorageManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/constants/StorageKeys.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/di/StorageClearUseCaseModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/di/StorageModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/helpers/DataConverter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/helpers/DataEncoding.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/prefs/InMemoryStorageProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/prefs/SharedPrefsStorageProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/prefs/StorageProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/usecases/IStorageClearUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/library/storage/usecases/StorageClearUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/detail/DetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/detail/DetailFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/IMovieDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/IMovieDataSource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/MovieRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/common/repository/MovieRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/FeedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/FeedFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/output/FeedState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/output/FeedState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/viewmodel/FeedViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/features/feed/presentation/viewmodel/FeedViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/Category.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/Category.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/winterry/movieapp/ui/components/movie/MovieItem.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,13 +111,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Object" />
-        <option value="Kotlin File" />
         <option value="layoutResourceFile" />
         <option value="navigationResourceFile" />
         <option value="Kotlin Enum" />
-        <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -140,7 +143,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/LHK/Documents/fastcampus/part2/chapter2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/LHK/Documents/_dev/TodoApp&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -156,6 +159,7 @@
       <recent name="C:\Users\LHK\Documents\fastcampus\part4plus\chapter3\app\src\main\java\com\winterry\movieapp\ui\theme\color" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.winterry.movieapp.features.feed.domain.usecase" />
       <recent name="com.winterry.movieapp.ui.models" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
