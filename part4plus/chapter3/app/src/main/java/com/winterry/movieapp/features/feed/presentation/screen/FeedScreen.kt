@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
@@ -24,6 +26,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarColors
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
@@ -36,8 +39,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.winterry.movieapp.R
 import com.winterry.movieapp.features.feed.presentation.input.IFeedViewModelInput
 import com.winterry.movieapp.features.feed.presentation.output.FeedState
@@ -61,18 +67,22 @@ fun FeedScreen(
         topBar = {
             TopAppBar(
                 modifier = Modifier
-                    .background(MaterialTheme.colorScheme.primary)
                     .requiredHeight(70.dp),
                 title = {
-                    Text(
-                        modifier = Modifier.padding(
-                            start = COMMON_HORIZONTAL_PADDING
-                        ),
-                        text = stringResource(id = R.string.app_name),
-                        style = MaterialTheme.typography.headlineMedium
-                    )
+                    Row(
+                        modifier = Modifier
+                            .padding(start = COMMON_HORIZONTAL_PADDING)
+                            .fillMaxHeight(),
+                        verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            text = stringResource(id = R.string.app_name),
+                            style = MaterialTheme.typography.headlineMedium,
+                        )
+                    }
                 },
-                colors = TopAppBarColors,
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary),
                 actions = {
 //                    AppBarMenu(
 //                        btnColor = btnColor,
@@ -83,11 +93,16 @@ fun FeedScreen(
             )
         }
     ) {
-        it
-        BodyContent(
-            feedState = feedStateHolder.value,
-            input = input
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+        ) {
+            BodyContent(
+                feedState = feedStateHolder.value,
+                input = input
+            )
+        }
     }
 }
 
